@@ -1,0 +1,16 @@
+# 文件名：cli_scheduler.py
+import pandas as pd
+from ortools.sat.python import cp_model
+
+class ShiftScheduler:
+    def __init__(self, demand_path, staff_path):
+        self.demand = pd.read_excel(demand_path)
+        self.staff = pd.read_excel(staff_path)
+        self.model = cp_model.CpModel()
+    
+    def generate_schedule(self):
+        # ...完整优化算法代码...
+
+if __name__ == "__main__":
+    scheduler = ShiftScheduler("需求.xlsx", "人员信息.xlsx")
+    scheduler.generate()
